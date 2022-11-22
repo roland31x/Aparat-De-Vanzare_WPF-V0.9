@@ -1,0 +1,22 @@
+﻿<Window x:Class="vendingmachinewpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:vendingmachinewpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800">
+    <Grid Height="782" Margin="0,-103,0,-95">
+        <StackPanel HorizontalAlignment="Center" Width="400" Height="150" Margin="0,364,0,268">
+            <Button Name="Starter" Height="122" Width="358" Content="Start" FontSize="36" Click="Start_Machine">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White"/>
+                        <GradientStop Color="#FFD14343" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </StackPanel>
+        <TextBlock x:Name="TextBlock" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,295,0,0" FontSize="24" Width="352" TextWrapping="Wrap" TextAlignment="Center" IsEnabled="False" Height="63" ><Run Text="Pentru a porni aparatul apasa butonul:"/><LineBreak/><Run/></TextBlock>
+    </Grid>
+</Window>
