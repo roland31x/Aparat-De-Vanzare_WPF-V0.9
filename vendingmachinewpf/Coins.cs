@@ -63,13 +63,13 @@ namespace vendingmachinewpf
             public static void CoinsStockSet() // pentru a crea o copie de tablou tip "deep"
             {
                 coinsstock = new int[coinsavailable.Length];
-                string s = "";
+                StringBuilder str = new StringBuilder();           
                 for (int i = 0; i < coinsavailable.Length; i++)
                 {
-                    s = s + coinsavailable[i] + ",";
+                    str.Append(coinsavailable[i]);
+                    str.Append(',');
                 }
-                string[] tokens;
-                tokens = s.Split(',');
+                string[] tokens = str.ToString().Split(',');
                 for (int i = 0; i < coinsstock.Length; i++)
                 {
                     coinsstock[i] = int.Parse(tokens[i]);
@@ -121,7 +121,7 @@ namespace vendingmachinewpf
         public void RestCalc(ref int machinebalance) // calculeaza cat rest trebuie sa dea / cat poate da
         {
             StringBuilder Rest = new StringBuilder();
-            Rest.Append("Ati primit un produs si rest: ");
+            Rest.Append("Ati primit un produs ");
             int r;
             r = machinebalance;
             int CL = GetCoinsLength();
@@ -134,6 +134,7 @@ namespace vendingmachinewpf
                     coinsavailable[i] = coinsstock[i];
                 }
             }
+            bool restgiven = false;
             for (int i = CL - 1; i >= 0; i--)
             {
                 while (r > 0 && coinsavailable[i] > 0)
@@ -141,13 +142,24 @@ namespace vendingmachinewpf
                     if ((r - Coins.coins[i]) >= 0)
                     {
                         coinsgiven[i]++;
+                        restgiven = true;
                         coinsavailable[i]--;
                         r -= Coins.coins[i];
                     }
                     else break;
                 }
             }
-            bool restgiven = false;
+            if (restgiven)
+            {
+                Rest.Append(", si rest: ");
+            }
+            else
+            {
+                Rest.Append(", aparatul nu a putut da rest.");
+                this.finalrest = Rest.ToString();
+                return;
+            }
+            restgiven = false;
             for (int j = 0; j < CL; j++)
             {
                 if (coinsgiven[j] > 0)
