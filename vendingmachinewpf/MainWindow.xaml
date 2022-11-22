@@ -5,18 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:vendingmachinewpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800">
+        Title="Aparat De Vanzare" Height="600" Width="800"
+        ResizeMode="NoResize">
     <Grid Height="782" Margin="0,-103,0,-95">
-        <StackPanel HorizontalAlignment="Center" Width="400" Height="150" Margin="0,364,0,268">
-            <Button Name="Starter" Height="122" Width="358" Content="Start" FontSize="36" Click="Start_Machine">
+        <StackPanel Margin="175,330,175,228" Orientation="Vertical">
+            <TextBlock x:Name="TextBlock" FontSize="24" Width="450" TextWrapping="Wrap" TextAlignment="Center" Height="37" IsEnabled="False" ><Run Text="Pentru a porni aparatul apasa butonul:"/><LineBreak/><Run/></TextBlock>
+            <Button x:Name="Starter" Height="122" Width="358" Content="Start" FontSize="36" Click="Start_Machine" BorderBrush="{x:Null}">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="White"/>
-                        <GradientStop Color="#FFD14343" Offset="1"/>
+                        <GradientStop Color="#FFEE5B5B"/>
+                        <GradientStop Color="#FFFF1515" Offset="1"/>
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
         </StackPanel>
-        <TextBlock x:Name="TextBlock" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,295,0,0" FontSize="24" Width="352" TextWrapping="Wrap" TextAlignment="Center" IsEnabled="False" Height="63" ><Run Text="Pentru a porni aparatul apasa butonul:"/><LineBreak/><Run/></TextBlock>
+        <Grid Margin="562,571,43,139" Height="72">
+            <Button x:Name="Config" Content="Config" Click="Config_Machine" Margin="14,21,14,0" FontSize="20">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White"/>
+                        <GradientStop Color="#FF00FF0B" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <TextBlock x:Name="TextBlock_Copy1" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="16" Width="216" TextWrapping="Wrap" TextAlignment="Center" IsEnabled="False" Height="25" Margin="0,-7,0,0" ><Run Text="Configurare aparat:"/><LineBreak/><Run/></TextBlock>
+        </Grid>
+        <TextBlock x:Name="TextBlock_Copy" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,123,0,0" FontSize="48" Width="664" TextWrapping="Wrap" TextAlignment="Center" IsEnabled="False" Height="63" FontWeight="Bold" ><Run Text="APARAT DE VANZARE V0.1"/><LineBreak/><Run/></TextBlock>
     </Grid>
 </Window>

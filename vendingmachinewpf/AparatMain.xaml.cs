@@ -18,10 +18,10 @@ namespace vendingmachinewpf
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class AparatMain : Window
     {
         Aparat vending = new Aparat();
-        public Window1()
+        public AparatMain()
         {
             InitializeComponent();
             CoinsConfig.Type.Defaults();

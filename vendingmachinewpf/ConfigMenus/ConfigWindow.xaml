@@ -1,0 +1,16 @@
+﻿<Window x:Class="vendingmachinewpf.ConfigWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:vendingmachinewpf"
+        mc:Ignorable="d"
+        Title="Configurare Aparat" Height="600" Width="800"
+        ResizeMode="NoResize">
+    <Grid>
+        <TextBox x:Name ="CoinsToAdd" Margin="74,228,354,209" FontSize="90" BorderBrush="Black" BorderThickness="5,5,5,5" TextChanged="TextBox_TextChanged" TextAlignment="Center"/>
+        <Button Content="Adauga" Margin="504,257,84,238" Click="Button_Click" FontSize="36" Background="#FFADADAD" BorderThickness="5,5,5,5" BorderBrush="Black"/>
+        <Button x:Name="NextStep" Content="Pasul urmator" Margin="512,471,92,59" Click="NextPage" FontSize="20" Background="#FF40FF41" BorderThickness="5,5,5,5" BorderBrush="Black" IsEnabled="False"/>
+        <TextBlock Text="Introduceti cate o moneda pe care o poate accepta aparatul:" Margin="10,10,10,362" FontSize="48" TextWrapping="WrapWithOverflow" TextAlignment="Center"/>
+    </Grid>
+</Window>
