@@ -32,7 +32,6 @@ namespace vendingmachinewpf
             Starter.IsEnabled = false;
             Config.IsEnabled = false;
             TextBlock.Text = "Aparatul este in curs de configurare.";
-            Coins.wasconfigured = true;
 
             conf.ShowDialog();
 
@@ -45,8 +44,7 @@ namespace vendingmachinewpf
                 TextBlock.Text = $"Aparatul s-a resetat la setari implicite. {Environment.NewLine}Apasati butonul pentru a porni aparatul:";
             }
             Starter.IsEnabled = true;
-            Config.IsEnabled = true;
-            
+            Config.IsEnabled = true;           
         }
 
         public void Start_Machine(object sender, RoutedEventArgs e)

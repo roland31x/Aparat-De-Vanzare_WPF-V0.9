@@ -8,9 +8,9 @@
         Title="Aparat De Vanzare" Height="600" Width="800"
         ResizeMode="NoResize">
     <Grid Height="782" Margin="0,-103,0,-95">
-        <StackPanel Margin="175,330,175,228" Orientation="Vertical">
-            <TextBlock x:Name="TextBlock" FontSize="24" Width="450" TextWrapping="Wrap" TextAlignment="Center" Height="37" IsEnabled="False" ><Run Text="Pentru a porni aparatul apasa butonul:"/><LineBreak/><Run/></TextBlock>
-            <Button x:Name="Starter" Height="122" Width="358" Content="Start" FontSize="36" Click="Start_Machine" BorderBrush="{x:Null}">
+        <StackPanel Margin="10,303,10,217" Orientation="Vertical">
+            <TextBlock x:Name="TextBlock" FontSize="24" TextWrapping="Wrap" TextAlignment="Center" IsEnabled="False" Height="36" Width="780" ><Run Text="Pentru a porni aparatul apasa butonul:"/><LineBreak/><Run/></TextBlock>
+            <Button x:Name="Starter" Content="Start" FontSize="36" Click="Start_Machine" BorderBrush="{x:Null}" Height="122" Width="358">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFEE5B5B"/>

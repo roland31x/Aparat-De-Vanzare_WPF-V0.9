@@ -17,7 +17,7 @@ namespace vendingmachinewpf
         public static bool badconfig = false;
         public static void CheckConfig()
         {
-            if (step1 && step2 && step3 && step4&& step5) 
+            if (step1 && step2 && step3 && step4 && step5) 
             {
                 Coins.wasconfigured = true;
             }
