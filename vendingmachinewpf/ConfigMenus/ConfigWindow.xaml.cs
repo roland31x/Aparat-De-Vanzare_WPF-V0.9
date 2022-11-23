@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using vendingmachinewpf.ConfigMenus;
 
 namespace vendingmachinewpf
 {
@@ -20,40 +21,15 @@ namespace vendingmachinewpf
     /// </summary>
     public partial class ConfigWindow : Window
     {
-        SortedSet<int> leCoins = new();
+        
         public ConfigWindow()
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            
-            int CoinToAdd;
-            if (!int.TryParse(CoinsToAdd.Text, out CoinToAdd))
-            {
-                MessageBox.Show("Trebuie sa introduci un numar!!!");
-                return;
-            }
-            if(CoinToAdd > 99999)
-            {
-                MessageBox.Show("Moneda prea mare!!!");
-                return;
-            }
-            leCoins.Add(CoinToAdd);
-            MessageBox.Show($"{CoinsToAdd.Text} a fost adaugat ca moneda acceptata.{Environment.NewLine}Adaugati mai multe sau continuati la urmatorul pas.");
-            NextStep.IsEnabled = true;
-
-        }
-        private void NextPage(object sender, RoutedEventArgs e)
-        {
-            Coins.coins = leCoins.ToArray();
-            ConfigSteps.step1 = true;
-            this.Close();
-        }
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            
+            App.ParentWindowRef = this;
+            this.ParentFrame.Navigate(new Page1());
         }
     }
 }

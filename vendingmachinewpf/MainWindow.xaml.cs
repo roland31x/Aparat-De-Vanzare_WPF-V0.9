@@ -37,12 +37,13 @@ namespace vendingmachinewpf
 
             TextBlock.Height = 72;
             TextBlock.Text = $"Aparatul a fost reconfigurat. {Environment.NewLine}Apasati butonul pentru a porni aparatul:";
-            ConfigSteps.CheckConfig();
-            if (ConfigSteps.badconfig)
+            CoinsConfig.Steps.CheckConfig();
+            if (CoinsConfig.Steps.badconfig)
             {
                 MessageBox.Show($"Aparatul nu a fost reconfigurat corespunzator.{Environment.NewLine}Daca porniti aparatul, v-a rula cu setari implicite.");
                 TextBlock.Text = $"Aparatul s-a resetat la setari implicite. {Environment.NewLine}Apasati butonul pentru a porni aparatul:";
             }
+            TextBlock.Text = $"Aparatul a fost reconfigurat cu success.{Environment.NewLine}Apasati butonul pentru a porni aparatul:";
             Starter.IsEnabled = true;
             Config.IsEnabled = true;           
         }
@@ -64,7 +65,16 @@ namespace vendingmachinewpf
             }
             else
             {
-                
+                AparatConfigurat win = new AparatConfigurat();
+
+                Starter.IsEnabled = false;
+                TextBlock.Height = 37;
+                TextBlock.Text = "Aparatul functioneaza.";
+
+                win.ShowDialog();
+
+                TextBlock.Text = "Aparatul s-a oprit, pentru a-l reporni apasati butonul:";
+                Starter.IsEnabled = true;
             }
         }
     }

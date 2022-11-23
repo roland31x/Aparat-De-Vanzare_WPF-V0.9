@@ -6,28 +6,7 @@ using System.Threading;
 using System.Windows.Media;
 
 namespace vendingmachinewpf
-{
-    public class ConfigSteps 
-    {
-        public static bool step1 = false;
-        public static bool step2 = false;
-        public static bool step3 = false;
-        public static bool step4 = false;
-        public static bool step5 = false;
-        public static bool badconfig = false;
-        public static void CheckConfig()
-        {
-            if (step1 && step2 && step3 && step4 && step5) 
-            {
-                Coins.wasconfigured = true;
-            }
-            else
-            {
-                badconfig = true;
-            }
-        }
-    }
-
+{   
     public class Coins
     {
         public static int[] coins; // pentru a adauga noi monede acceptate
@@ -38,9 +17,29 @@ namespace vendingmachinewpf
         public static int merch;
         public static bool refreshstock = false;
         public static bool wasconfigured = false;
-    }
+    } 
     public class CoinsConfig : Coins
-    {
+    { 
+        public class Steps 
+        {
+            public static bool step1 = false;
+            public static bool step2 = false;
+            public static bool step3 = false;
+            //public static bool step4 = false;
+            //public static bool step5 = false;
+            public static bool badconfig = false;
+            public static void CheckConfig()
+            {
+                if (step1 && step2 && step3) 
+                {
+                    wasconfigured = true;
+                }
+                else
+                {
+                    badconfig = true;
+                }
+            }
+        }
         public class Type
         {
             public static void BalanceSet(int amount)

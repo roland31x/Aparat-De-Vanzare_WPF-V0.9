@@ -1,0 +1,22 @@
+﻿<Page x:Class="vendingmachinewpf.ConfigMenus.Page2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:vendingmachinewpf.ConfigMenus"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="Page2">
+
+    <Grid Background="White">
+        <TextBlock x:Name="InfoBox" Text="Setati stocul de monede al aparatului:" FontSize="36" Height="475" Canvas.Left="96" Canvas.Top="70" Width="608" HorizontalAlignment="Center" VerticalAlignment="Top" TextWrapping="Wrap" TextAlignment="Center" Margin="0,115,0,0"/>
+        <Canvas x:Name="Page2Canvas" Margin="0,31,0,-31">
+            <TextBox x:Name="StockToSet" TextAlignment="Center" FontSize="72" BorderThickness="5,5,5,5" BorderBrush="Black" TextChanged="StockToSet_TextChanged" Text="" Height="114" Canvas.Left="225" Canvas.Top="200" Width="297"/>
+            <TextBlock x:Name="CoinBox" FontSize="72" TextAlignment="Right" Height="122" Canvas.Left="24" Canvas.Top="196" Width="183" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Button x:Name="SetterButton" Content="Set" Click="Button_Click" FontSize="30" Foreground="Black" Background="#FF00EDFF" BorderThickness="5,5,5,5" BorderBrush="Black" Height="60" Canvas.Left="559" Canvas.Top="227" Width="120"/>
+        </Canvas>
+        <Button x:Name="NextStep" Content="Pasul urmator" Click="NextPage" FontSize="36" Background="#FF40FF41" BorderThickness="5,5,5,5" BorderBrush="Black" IsEnabled="True" Height="122" Canvas.Left="198" Canvas.Top="224" Width="404" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,224,0,0" Visibility="Collapsed"/>
+        <Button x:Name="RefButtonDa" Content="Da" Click="RefButtonDa_Click" FontSize="36" Background="#FF40FF41" BorderThickness="5,5,5,5" BorderBrush="Black" IsEnabled="True" Height="87" Width="134" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="198,373,0,0" Visibility="Collapsed"/>
+        <Button x:Name="RefButtonNu" Content="Nu" Click="RefButtonNu_Click" FontSize="36" Background="#FFFF2121" BorderThickness="5,5,5,5" BorderBrush="Black" IsEnabled="True" Height="87" Width="134" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="468,373,0,0" Visibility="Collapsed"/>
+    </Grid>
+</Page>

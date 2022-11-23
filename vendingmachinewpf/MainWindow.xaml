@@ -30,6 +30,6 @@
             </Button>
             <TextBlock x:Name="TextBlock_Copy1" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="16" Width="216" TextWrapping="Wrap" TextAlignment="Center" IsEnabled="False" Height="25" Margin="0,-7,0,0" ><Run Text="Configurare aparat:"/><LineBreak/><Run/></TextBlock>
         </Grid>
-        <TextBlock x:Name="TextBlock_Copy" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,123,0,0" FontSize="48" Width="664" TextWrapping="Wrap" TextAlignment="Center" IsEnabled="False" Height="63" FontWeight="Bold" ><Run Text="APARAT DE VANZARE V0.1"/><LineBreak/><Run/></TextBlock>
+        <TextBlock x:Name="TextBlock_Copy" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,123,0,0" FontSize="48" Width="664" TextWrapping="Wrap" TextAlignment="Center" IsEnabled="False" Height="63" FontWeight="Bold" ><Run Text="APARAT DE VANZARE V0.2"/><LineBreak/><Run/></TextBlock>
     </Grid>
 </Window>
