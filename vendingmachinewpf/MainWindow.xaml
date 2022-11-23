@@ -8,9 +8,9 @@
         Title="Aparat De Vanzare" Height="600" Width="800"
         ResizeMode="NoResize">
     <Grid Height="782" Margin="0,-103,0,-95">
-        <StackPanel Margin="10,303,10,217" Orientation="Vertical">
+        <StackPanel Margin="10,281,10,228" Orientation="Vertical">
             <TextBlock x:Name="TextBlock" FontSize="24" TextWrapping="Wrap" TextAlignment="Center" IsEnabled="False" Height="36" Width="780" ><Run Text="Pentru a porni aparatul apasa butonul:"/><LineBreak/><Run/></TextBlock>
-            <Button x:Name="Starter" Content="Start" FontSize="36" Click="Start_Machine" BorderBrush="{x:Null}" Height="122" Width="358">
+            <Button x:Name="Starter" Content="Start" FontSize="36" Click="Start_Machine" BorderBrush="{x:Null}" Height="122" Width="330">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFEE5B5B"/>
@@ -19,17 +19,24 @@
                 </Button.Background>
             </Button>
         </StackPanel>
-        <Grid Margin="562,571,43,139" Height="72">
-            <Button x:Name="Config" Content="Config" Click="Config_Machine" Margin="14,21,14,0" FontSize="20">
-                <Button.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="White"/>
-                        <GradientStop Color="#FF00FF0B" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.Background>
-            </Button>
-            <TextBlock x:Name="TextBlock_Copy1" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="16" Width="216" TextWrapping="Wrap" TextAlignment="Center" IsEnabled="False" Height="25" Margin="0,-7,0,0" ><Run Text="Configurare aparat:"/><LineBreak/><Run/></TextBlock>
-        </Grid>
-        <TextBlock x:Name="TextBlock_Copy" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,123,0,0" FontSize="48" Width="664" TextWrapping="Wrap" TextAlignment="Center" IsEnabled="False" Height="63" FontWeight="Bold" ><Run Text="APARAT DE VANZARE V0.2"/><LineBreak/><Run/></TextBlock>
+        <Button x:Name="Config" Content="Config" Click="Config_Machine" FontSize="20" Margin="316,586,316,145">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FF00FF0B" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBlock x:Name="TextBlock_Copy1" VerticalAlignment="Top" FontSize="16" Width="216" TextWrapping="Wrap" TextAlignment="Center" IsEnabled="False" Height="21" Margin="0,559,0,0" HorizontalAlignment="Center" ><Run Text="Configurare aparat:"/><LineBreak/><Run/></TextBlock>
+        <Button x:Name="Default_Button" Content="Reset To Defaults" Click="Default_Button_Click" FontSize="18" Margin="68,586,565,145" Visibility="Collapsed">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FF00DAFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBlock x:Name="TextBlock_Copy" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,123,0,0" FontSize="48" Width="664" TextWrapping="Wrap" TextAlignment="Center" IsEnabled="False" Height="63" FontWeight="Bold" ><Run Text="APARAT DE VANZARE"/><LineBreak/><Run/></TextBlock>
+        <TextBlock x:Name="TextBlock_Copy2" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,179,0,0" FontSize="16" Width="286" TextWrapping="Wrap" TextAlignment="Center" IsEnabled="False" Height="20" FontWeight="Bold" ><Run Text="V0.9"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
     </Grid>
 </Window>

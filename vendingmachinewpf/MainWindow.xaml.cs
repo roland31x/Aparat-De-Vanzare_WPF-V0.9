@@ -29,6 +29,7 @@ namespace vendingmachinewpf
         {
             ConfigWindow conf = new ConfigWindow();
 
+            CoinsConfig.Steps.C_Reset();
             Starter.IsEnabled = false;
             Config.IsEnabled = false;
             TextBlock.Text = "Aparatul este in curs de configurare.";
@@ -36,16 +37,19 @@ namespace vendingmachinewpf
             conf.ShowDialog();
 
             TextBlock.Height = 72;
+            
+            Starter.IsEnabled = true;
+            Config.IsEnabled = true;
             TextBlock.Text = $"Aparatul a fost reconfigurat. {Environment.NewLine}Apasati butonul pentru a porni aparatul:";
             CoinsConfig.Steps.CheckConfig();
             if (CoinsConfig.Steps.badconfig)
             {
                 MessageBox.Show($"Aparatul nu a fost reconfigurat corespunzator.{Environment.NewLine}Daca porniti aparatul, v-a rula cu setari implicite.");
                 TextBlock.Text = $"Aparatul s-a resetat la setari implicite. {Environment.NewLine}Apasati butonul pentru a porni aparatul:";
+                return;
             }
             TextBlock.Text = $"Aparatul a fost reconfigurat cu success.{Environment.NewLine}Apasati butonul pentru a porni aparatul:";
-            Starter.IsEnabled = true;
-            Config.IsEnabled = true;           
+            Default_Button.Visibility = Visibility.Visible;
         }
 
         public void Start_Machine(object sender, RoutedEventArgs e)
@@ -55,6 +59,7 @@ namespace vendingmachinewpf
                 AparatMain win = new AparatMain();
 
                 Starter.IsEnabled = false;
+                Config.IsEnabled = false;
                 TextBlock.Height = 37;
                 TextBlock.Text = "Aparatul functioneaza.";
 
@@ -62,12 +67,14 @@ namespace vendingmachinewpf
 
                 TextBlock.Text = "Aparatul s-a oprit, pentru a-l reporni apasati butonul:";
                 Starter.IsEnabled = true;
+                Config.IsEnabled = true;
             }
             else
             {
                 AparatConfigurat win = new AparatConfigurat();
 
                 Starter.IsEnabled = false;
+                Config.IsEnabled = false;
                 TextBlock.Height = 37;
                 TextBlock.Text = "Aparatul functioneaza.";
 
@@ -75,7 +82,15 @@ namespace vendingmachinewpf
 
                 TextBlock.Text = "Aparatul s-a oprit, pentru a-l reporni apasati butonul:";
                 Starter.IsEnabled = true;
+                Config.IsEnabled = true;
             }
+        }
+
+        private void Default_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Coins.wasconfigured = false;
+            TextBlock.Text = $"Aparatul s-a resetat la setari implicite.{Environment.NewLine}Apasati butonul pentru a porni aparatul:";
+            Default_Button.Visibility = Visibility.Collapsed;
         }
     }
 }

@@ -13,7 +13,7 @@ namespace vendingmachinewpf
         public static int[] coinsavailable;
         public static int[] coinsstock;
         public static int cost; // pentru a schimba costul produsului // pentru a schimba banii de buzunar
-        public static int machinebalance;
+        //public static int machinebalance;
         public static int merch;
         public static bool refreshstock = false;
         public static bool wasconfigured = false;
@@ -33,11 +33,21 @@ namespace vendingmachinewpf
                 if (step1 && step2 && step3) 
                 {
                     wasconfigured = true;
+                    badconfig = false;
                 }
                 else
                 {
+                    wasconfigured = false;
                     badconfig = true;
                 }
+            }
+            public static void C_Reset()
+            {
+                step1 = false;
+                step2 = false;
+                step3 = false;
+                badconfig = false;
+                wasconfigured = false;
             }
         }
         public class Type
@@ -90,6 +100,7 @@ namespace vendingmachinewpf
     public class Aparat : Coins
     {
         public string finalrest;
+        public int machinebalance;
         public void Work()
         {
             //merch = 0;
@@ -97,9 +108,9 @@ namespace vendingmachinewpf
         }
         public void Handle(int input)
         {
-            State(input, ref machinebalance, ref merch);
+            State(input);
         }
-        public void State(int input, ref int machinebalance, ref int merch)
+        public void State(int input)
         {
             machinebalance += input;
             if (machinebalance == cost) // returneaza produs

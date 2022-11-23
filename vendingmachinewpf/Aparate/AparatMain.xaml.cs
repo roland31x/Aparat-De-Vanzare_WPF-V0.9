@@ -52,7 +52,7 @@ namespace vendingmachinewpf
         void UpdateUI()
         {
             Cost.Text = $"{Coins.cost}c";
-            MachineBal.Text = $"{Coins.machinebalance}c";
+            MachineBal.Text = $"{vending.machinebalance}c";
             ConsoleLine.Text = $"{vending.finalrest}";
         }
         async Task ClearLog()

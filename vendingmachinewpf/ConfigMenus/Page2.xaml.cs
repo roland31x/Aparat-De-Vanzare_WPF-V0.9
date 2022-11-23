@@ -45,11 +45,7 @@ namespace vendingmachinewpf.ConfigMenus
             CoinBox.Text = Coins.coins[stockstep].ToString() + "c :";
         }
 
-        private void NextPage(object sender, RoutedEventArgs e)
-        {
-            CoinsConfig.Steps.step2 = true;
-            App.ParentWindowRef.ParentFrame.Navigate(new Page3());
-        }
+
 
         private void StockToSet_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -84,6 +80,11 @@ namespace vendingmachinewpf.ConfigMenus
             Coins.refreshstock = false;
             InfoBox.Text = $"Stoc setat cu succes!";
 
+        }        
+        private void NextPage(object sender, RoutedEventArgs e)
+        {
+            CoinsConfig.Steps.step2 = true;
+            App.ParentWindowRef.ParentFrame.Navigate(new Page3());
         }
     }
 }

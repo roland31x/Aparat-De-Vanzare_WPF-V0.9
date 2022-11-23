@@ -40,6 +40,12 @@ namespace vendingmachinewpf.ConfigMenus
             }
             leCoins.Add(CoinToAdd);
             MOutput.Text=$"* '{CoinsToAdd.Text}c' a fost adaugat.";
+            if(leCoins.Count >= 16)
+            {
+                CoinsToAdd.IsEnabled= false;
+                NextStep.Background = new SolidColorBrush(Colors.PaleGoldenrod);
+                MOutput.Text = $"Nr maxim de monede atins!";
+            }
             CoinsToAdd.Text = null;
             NextStep.IsEnabled = true;
         }

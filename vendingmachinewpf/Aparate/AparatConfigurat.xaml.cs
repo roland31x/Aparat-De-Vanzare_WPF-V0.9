@@ -30,32 +30,43 @@ namespace vendingmachinewpf
 
         void CreateButtons()
         {
-            for (int i = 0; i < Coins.coins.Length; ++i)
+            for (int i = 0; i < Coins.coins.Length; i++)
             {
                 Button button = new Button()
                 {
-                    Height = 100,
-                    VerticalAlignment= VerticalAlignment.Center,
-                    Width = 100,
+                    Height = 90,
+                    VerticalAlignment = VerticalAlignment.Center,
+                    Width = 90,
                     FontSize = 32,
+                    HorizontalAlignment = HorizontalAlignment.Center,
+                    Margin = new Thickness(10, 5, 10, 0),
+                    Background = new SolidColorBrush(Colors.DarkGoldenrod),
+                    Cursor = Cursors.Hand,
                     Content = string.Format(Coins.coins[i].ToString()+"c"),
                     Tag = Coins.coins[i]
                 };
-                button.Click += new RoutedEventHandler(button_Click);
-                this.ButtonDock.Children.Add(button);
+                button.Click += new RoutedEventHandler(Button_Click);
+                if (i < 8)
+                {
+                    this.ButtonDock.Children.Add(button);
+                }
+                else
+                {
+                    this.ButtonDock2.Children.Add(button);
+                }
             }
         }
-        async void button_Click(object sender, RoutedEventArgs e)
+        async void Button_Click(object sender, RoutedEventArgs e)
         {
             await ClearLog();
-            vending.Handle(int.Parse(((sender as Button).Tag).ToString()));          
+            vending.Handle(Convert.ToInt32((sender as Button).Tag));          
             UpdateUI();
         }
 
         void UpdateUI()
         {
             Cost.Text = $"{Coins.cost}c";
-            MachineBal.Text = $"{Coins.machinebalance}c";
+            MachineBal.Text = $"{vending.machinebalance}c";
             ConsoleLine.Text = $"{vending.finalrest}";
         }
         async Task ClearLog()
