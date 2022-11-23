@@ -13,5 +13,6 @@ namespace vendingmachinewpf
     /// </summary>
     public partial class App : Application
     {
+        public static ConfigWindow ParentWindowRef;
     }
 }
