@@ -69,6 +69,7 @@ namespace vendingmachinewpf.ConfigMenus
         private void RefButtonDa_Click(object sender, RoutedEventArgs e)
         {
             Coins.refreshstock = true;
+            CoinsConfig.Type.CoinsStockSet();
             NextStep.Visibility = Visibility.Visible;
             RefButtonDa.Visibility = Visibility.Collapsed;
             RefButtonNu.Visibility = Visibility.Collapsed;

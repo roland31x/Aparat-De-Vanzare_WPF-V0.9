@@ -15,7 +15,6 @@
 
   <ItemGroup>
     <Folder Include="Images\" />
-    <Folder Include="Aparate\" />
   </ItemGroup>
 
   <ItemGroup>
